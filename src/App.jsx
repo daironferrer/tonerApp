@@ -11,11 +11,11 @@ import { supabase } from './supabaseClient';
 
 const CustomXAxisTick = (props) => {
   const { x, y, payload } = props;
-  const dy = 20; // Adjust to move labels down
+  const dy = 20;
   return (
     <text
       x={x}
-      y={y + dy} // shift label down by dy pixels
+      y={y + dy}
       textAnchor="end"
       fill="#666"
       transform={`rotate(-45, ${x}, ${y + dy})`}
@@ -29,9 +29,6 @@ const CustomXAxisTick = (props) => {
 function App() {
   const [toners, setToners] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [adjustingToner, setAdjustingToner] = useState(null);
-  const [adjustAmount, setAdjustAmount] = useState('');
-  const [adjustType, setAdjustType] = useState('add');
 
   // Fetch toners from Supabase
   useEffect(() => {
@@ -52,32 +49,14 @@ function App() {
     fetchToners();
   }, []);
 
-  const openAdjustModal = (toner) => {
-    setAdjustingToner(toner);
-    setAdjustAmount('');
-    setAdjustType('add');
-  };
-
-  const closeAdjustModal = () => {
-    setAdjustingToner(null);
-  };
-
-  const handleAdjust = async () => {
-    const amount = parseInt(adjustAmount);
-    if (isNaN(amount) || amount <= 0) {
-      alert('Enter a valid number');
-      return;
-    }
-
-    const updatedQuantity =
-      adjustType === 'add'
-        ? adjustingToner.quantity + amount
-        : Math.max(0, adjustingToner.quantity - amount);
+  const handleAdjust = async (toner, delta) => {
+  
+  const updatedQuantity = Math.max(0, Number(toner.quantity) + delta);
 
     const { error } = await supabase
       .from('toners')
       .update({ quantity: updatedQuantity })
-      .eq('id', adjustingToner.id);
+      .eq('id', toner.id);
 
     if (error) {
       alert('Failed to update');
@@ -92,99 +71,49 @@ function App() {
       .order('id', { ascending: true });
 
     setToners(data);
-    closeAdjustModal();
   };
 
   return (
     
     <div style={{
-      padding: '60px 350px',
+      padding: '80px 500px',
       fontFamily: 'Futura, sans-serif',
-      maxWidth: 800,
+      maxWidth: 2000,
       margin: '0 auto',
       textAlign: 'center'
     }}>
-      <h1>Toner Inventory Tracker</h1>
 
       {loading ? (
         <p>Loading toner data...</p>
       ) : (
         <>
-          <ul style={{ marginBottom: '40px', listStyle: 'none', padding: 0 }}>
+          <div>
             {toners.map((toner) => (
-              <li key={toner.id} style={{ marginBottom: 12 }}>
+              <div key={toner.id} style={{ marginBottom: 22, marginLeft: 20}}>
                 <strong>{toner.name}</strong>: {toner.quantity}{' '}
-                <button onClick={() => openAdjustModal(toner)}>Adjust</button>
-              </li>
+                <button onClick={() => handleAdjust(toner, 1)}>+1</button>
+                <button onClick={() => handleAdjust(toner, -1)}>-1</button>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <h2 style={{ marginTop: '40px' }}>Inventory Chart</h2>
           <div style={{ overflowX: 'auto', paddingBottom: 40, paddingTop: 40 }}>
-            <BarChart width={1000} height={700} data={toners} margin={{ left: 50, right: 30, bottom: 80, top: 50}}>
+            <BarChart width={1000} height={900} data={toners} margin={{ left: 50, right: 30, bottom: 250, top: 50}}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" interval={0} angle={-45} textanchor='end' tick={<CustomXAxisTick/>}/>
-              <YAxis width={60} allowDecimals={false} />
+              <YAxis width={50} allowDecimals={false} />
               <Tooltip />
-              <Bar dataKey="quantity" fill="#8884d8" />
+              <Bar dataKey="quantity" fill="#200430"/>
             </BarChart>
           </div>
         </>
-      )}
-
-      {adjustingToner && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0,0,0,0.3)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <div style={{
-            background: 'black',
-            color: 'white',
-            padding: 20,
-            borderRadius: 8,
-            minWidth: 300
-          }}>
-            <h3>Adjust "{adjustingToner.name}"</h3>
-            <div style={{ marginBottom: 10 }}>
-              <label>
-                Type:{' '}
-                <select
-                  value={adjustType}
-                  onChange={(e) => setAdjustType(e.target.value)}
-                >
-                  <option value="add">Add</option>
-                  <option value="remove">Remove</option>
-                </select>
-              </label>
-            </div>
-            <div style={{ marginBottom: 20 }}>
-              <label>
-                Quantity:{' '}
-                <input
-                  type="number"
-                  value={adjustAmount}
-                  onChange={(e) => setAdjustAmount(e.target.value)}
-                  min="1"
-                />
-              </label>
-            </div>
-            <button onClick={handleAdjust} style={{ marginRight: 10 }}>Submit</button>
-            <button onClick={closeAdjustModal}>Cancel</button>
-          </div>
-        </div>
       )}
     </div>
   );
 }
 
 export default App;
+
+
 
