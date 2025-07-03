@@ -9,6 +9,7 @@ import {
 } from 'recharts';
 import { supabase } from './supabaseClient';
 
+
 const CustomXAxisTick = (props) => {
   const { x, y, payload } = props;
   const dy = 20;
@@ -19,7 +20,6 @@ const CustomXAxisTick = (props) => {
       textAnchor="end"
       fill="#666"
       transform={`rotate(-45, ${x}, ${y + dy})`}
-      style={{ fontSize: 12 }}
     >
       {payload.value}
     </text>
@@ -51,6 +51,8 @@ function App() {
 
   const handleAdjust = async (toner, delta) => {
   
+
+  // Wrapped toner quantity Number to force JS to treat it as a number and not a concatenation  
   const updatedQuantity = Math.max(0, Number(toner.quantity) + delta);
 
     const { error } = await supabase
@@ -75,34 +77,27 @@ function App() {
 
   return (
     
-    <div style={{
-      padding: '80px 500px',
-      fontFamily: 'Futura, sans-serif',
-      maxWidth: 2000,
-      margin: '0 auto',
-      textAlign: 'center'
-    }}>
-
+    <div>
       {loading ? (
         <p>Loading toner data...</p>
       ) : (
         <>
           <div>
             {toners.map((toner) => (
-              <div key={toner.id} style={{ marginBottom: 22, marginLeft: 20}}>
+              <div key={toner.id} class="font-bold font-[Roboto]">
                 <strong>{toner.name}</strong>: {toner.quantity}{' '}
-                <button onClick={() => handleAdjust(toner, 1)}>+1</button>
-                <button onClick={() => handleAdjust(toner, -1)}>-1</button>
+                <button class="rounded-full px-5 py-1.5 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, 1)}>+1</button>
+                <button class="rounded-full px-5 py-1.5 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, -1)}>-1</button>
               </div>
             ))}
           </div>
 
-          <h2 style={{ marginTop: '40px' }}>Inventory Chart</h2>
-          <div style={{ overflowX: 'auto', paddingBottom: 40, paddingTop: 40 }}>
-            <BarChart width={1000} height={900} data={toners} margin={{ left: 50, right: 30, bottom: 250, top: 50}}>
+          <h2 class="flex font-bold font-[Roboto] items-center">Inventory Chart</h2>
+          <div class="md:flex display: flex text-center sm:text-left">
+            <BarChart width={600} height={800} data={toners} margin={{bottom: 250}}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" interval={0} angle={-45} textanchor='end' tick={<CustomXAxisTick/>}/>
-              <YAxis width={50} allowDecimals={false} />
+              <XAxis dataKey="name" interval={0} angle={0} textanchor='end' tick={<CustomXAxisTick/>}/>
+              <YAxis width={100} allowDecimals={false} />
               <Tooltip />
               <Bar dataKey="quantity" fill="#200430"/>
             </BarChart>
