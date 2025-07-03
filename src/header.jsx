@@ -9,7 +9,7 @@ function Header() {
                         </ul>
                     </nav>
             </header>
-            <div>
+            <div class="bg-black">
                 <img src="./public/ITpurplecrow.jpg" class="w-75"/>
             </div>
         </div>

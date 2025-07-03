@@ -84,10 +84,10 @@ function App() {
         <>
           <div>
             {toners.map((toner) => (
-              <div key={toner.id} class="font-bold font-[Roboto]">
+              <div key={toner.id} class="font-bold font-[Roboto] mt-4 grid grid-cols-5 gap-1 pointer-coarse:mt-6 pointer-coarse:grid-cols-3 pointer-coarse:gap-4">
                 <strong>{toner.name}</strong>: {toner.quantity}{' '}
-                <button class="rounded-full px-5 py-1.5 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, 1)}>+1</button>
-                <button class="rounded-full px-5 py-1.5 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, -1)}>-1</button>
+                <button class="rounded-lg px-5 py-1 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, 1)}>+1</button>
+                <button class="rounded-lg px-5 py-1 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, -1)}>-1</button>
               </div>
             ))}
           </div>
