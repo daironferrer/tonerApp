@@ -52,7 +52,7 @@ function App() {
   const handleAdjust = async (toner, delta) => {
   
 
-  // Wrapped toner quantity Number to force JS to treat it as a number and not a concatenation  
+  // Wrapped toner quantity in Number to force JS to treat it as a number and not a concatenation  
   const updatedQuantity = Math.max(0, Number(toner.quantity) + delta);
 
     const { error } = await supabase
@@ -82,26 +82,33 @@ function App() {
         <p>Loading toner data...</p>
       ) : (
         <>
+          <h2 class="font-bold font-[Roboto] text-center p-5 text-4xl">Inventory Levels</h2>
+          <div class="flex items-center justify-center overflow-x-auto">
+            <BarChart width={1000} height={800} data={toners} margin={{ bottom: 300, top: 30}}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" interval={0} angle={0} textAnchor="end" tick={<CustomXAxisTick />} />
+            <YAxis width={100} allowDecimals={false} />
+            <Tooltip />
+            <Bar dataKey="quantity" fill="#200430" />
+            </BarChart>
+          </div>
+
           <div>
+            <h1 class="font-bold font-[Roboto] text-center p-5 text-4xl bg-gray-950 text-white">Edit Quantities</h1>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 bg-gray-950 text-white">
             {toners.map((toner) => (
-              <div key={toner.id} class="font-bold font-[Roboto] mt-4 grid grid-cols-5 gap-1 pointer-coarse:mt-6 pointer-coarse:grid-cols-3 pointer-coarse:gap-4">
+              <div key={toner.id} class="font-bold font-[Roboto] m-3">
                 <strong>{toner.name}</strong>: {toner.quantity}{' '}
-                <button class="rounded-lg px-5 py-1 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, 1)}>+1</button>
-                <button class="rounded-lg px-5 py-1 bg-gray-950 text-white hover:bg-purple-500" onClick={() => handleAdjust(toner, -1)}>-1</button>
+                <div>
+                  <button class="bg-gray-950 text-white hover:bg-purple-900 rounded-md m-1 size-12 ring" onClick={() => handleAdjust(toner, 1)}>+1</button>
+                  <button class="bg-gray-950 text-white hover:bg-purple-900 rounded-md m-1 size-12 ring" onClick={() => handleAdjust(toner, -1)}>-1</button>
+                </div>             
               </div>
             ))}
           </div>
 
-          <h2 class="flex font-bold font-[Roboto] items-center">Inventory Chart</h2>
-          <div class="md:flex display: flex text-center sm:text-left">
-            <BarChart width={600} height={800} data={toners} margin={{bottom: 250}}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" interval={0} angle={0} textanchor='end' tick={<CustomXAxisTick/>}/>
-              <YAxis width={100} allowDecimals={false} />
-              <Tooltip />
-              <Bar dataKey="quantity" fill="#200430"/>
-            </BarChart>
-          </div>
         </>
       )}
     </div>
