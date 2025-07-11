@@ -18,8 +18,11 @@ const CustomXAxisTick = (props) => {
       x={x}
       y={y + dy}
       textAnchor="end"
-      fill="#666"
-      transform={`rotate(-45, ${x}, ${y + dy})`}
+      fill="white"
+      fontSize={17}
+      fontFamily='Roboto'
+      fontWeight={'semibold'}
+      transform={`rotate(-30, ${x}, ${y + dy})`}
     >
       {payload.value}
     </text>
@@ -77,38 +80,41 @@ function App() {
 
   return (
     
-    <div>
+    <div class="bg-black">
       {loading ? (
         <p>Loading toner data...</p>
       ) : (
         <>
-          <h2 class="font-bold font-[Roboto] text-center p-5 text-4xl">Inventory Levels</h2>
-          <div class="flex items-center justify-center overflow-x-auto">
+          <div class="relative"> 
+            <img src="./public/bg1.jpg" class="relative "></img>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent"></div>
+          </div>
+          <h1 class="text-3xl text-white font-[Roboto] text-center">Toner Levels</h1>
+          <div class="flex justify-center items-center">
             <BarChart width={1000} height={800} data={toners} margin={{ bottom: 300, top: 30}}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" interval={0} angle={0} textAnchor="end" tick={<CustomXAxisTick />} />
             <YAxis width={100} allowDecimals={false} />
             <Tooltip />
-            <Bar dataKey="quantity" fill="#200430" />
+            <Bar dataKey="quantity" fill="gray"/>
             </BarChart>
           </div>
 
           <div>
-            <h1 class="font-bold font-[Roboto] text-center p-5 text-4xl bg-gray-950 text-white">Edit Quantities</h1>
+            <h1 class="font-[Roboto] text-center p-5 text-4xl bg-black text-white">Edit Quantities</h1>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 bg-gray-950 text-white">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 bg-black text-white m-5">
             {toners.map((toner) => (
               <div key={toner.id} class="font-bold font-[Roboto] m-3">
-                <strong>{toner.name}</strong>: {toner.quantity}{' '}
+                <strong class="text-white">{toner.name}</strong>: {toner.quantity}{' '}
                 <div>
-                  <button class="bg-gray-950 text-white hover:bg-purple-900 rounded-md m-1 size-12 ring" onClick={() => handleAdjust(toner, 1)}>+1</button>
-                  <button class="bg-gray-950 text-white hover:bg-purple-900 rounded-md m-1 size-12 ring" onClick={() => handleAdjust(toner, -1)}>-1</button>
+                  <button class="bg-white text-black hover:bg-purple-900 rounded-md m-1 size-12 ring-2 ring-white" onClick={() => handleAdjust(toner, 1)}>+1</button>
+                  <button class="bg-white text-black hover:bg-purple-900 rounded-md m-1 size-12 ring-2 ring-white" onClick={() => handleAdjust(toner, -1)}>-1</button>
                 </div>             
               </div>
             ))}
           </div>
-
         </>
       )}
     </div>
