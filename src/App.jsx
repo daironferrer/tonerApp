@@ -19,10 +19,10 @@ const CustomXAxisTick = (props) => {
       y={y + dy}
       textAnchor="end"
       fill="white"
-      fontSize={17}
+      fontSize={18}
       fontFamily='Roboto'
       fontWeight={'semibold'}
-      transform={`rotate(-45, ${x}, ${y + dy})`}
+      transform={`rotate(-50, ${x}, ${y + dy})`}
     >
       {payload.value}
     </text>
@@ -85,9 +85,9 @@ function App() {
         <p>Loading toner data...</p>
       ) : (
         <>
-          <h1 class="text-3xl text-white font-[Roboto] text-center p-15">Toner Levels</h1>
-          <div class="w-full flex justify-center items-center lg:pr-20">
-            <BarChart class="mx-auto" width={1000} height={800} data={toners} margin={{ bottom: 300, top: 20}}>
+          <h1 class="text-4xl text-white font-[Roboto] text-center pt-10 lg:pt-50">Toner Levels</h1>
+          <div class="flex justify-center m-5">
+            <BarChart width={1250} height={800} data={toners} margin={{ bottom: 250, top: 20, left: 20, right: 20}}>   
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" interval={0} angle={0} textAnchor="end" tick={<CustomXAxisTick />} />
             <YAxis width={100} allowDecimals={false} />
@@ -97,16 +97,16 @@ function App() {
           </div>
 
           <div>
-            <h1 class="font-[Roboto] text-center m-10 text-4xl bg-[#171717] text-white">Edit Quantities</h1>
+            <h1 class="font-[Roboto] text-center m-10 text-4xl bg-[#171717] text-white lg:pt-25">Edit Quantities</h1>
           </div>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 bg-[#171717] text-white">
             {toners.map((toner) => (
-              <div key={toner.id} class="font-bold font-[Roboto] m-3">
-                <strong class="text-white">{toner.name}</strong>: {toner.quantity}{' '}
-                <div>
-                  <button class="bg-white text-black hover:bg-purple-900 rounded-md m-1 size-12 ring-2" onClick={() => handleAdjust(toner, 1)}>+1</button>
-                  <button class="bg-white text-black hover:bg-purple-900 rounded-md m-1 size-12 ring-2" onClick={() => handleAdjust(toner, -1)}>-1</button>
+              <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl m-5 bg-[#1d1b1b] p-6 shadow-lg outline outline-black/5">
+                <div key={toner.id} class="font-bold font-[Roboto] m-3">
+                <strong>{toner.name}</strong>: {toner.quantity}{' '}
+                  <button class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-12 shadow-lg" onClick={() => handleAdjust(toner, 1)}>+1</button>
+                  <button class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-12 shadow-lg" onClick={() => handleAdjust(toner, -1)}>-1</button>
                 </div>             
               </div>
             ))}
