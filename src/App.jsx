@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   BarChart,
   Bar,
   XAxis,
   YAxis,
-  Tooltip,
-  CartesianGrid
 } from 'recharts';
 import { supabase } from './supabaseClient';
 
@@ -18,8 +16,8 @@ const CustomXAxisTick = (props) => {
       x={x}
       y={y + dy}
       textAnchor="end"
-      fill="white"
-      fontSize={18}
+      fill="black"
+      fontSize={20}
       fontFamily='Roboto'
       fontWeight={'semibold'}
       transform={`rotate(-50, ${x}, ${y + dy})`}
@@ -80,36 +78,41 @@ function App() {
 
   return (
     
-    <div class="bg-[#171717]">
+    // Wrapped Bar Chart in a div with hidden block to hide chart on mobile for clean UI  
+
+    <div class="bg-[#726b6b]">
       {loading ? (
         <p>Loading toner data...</p>
       ) : (
         <>
-          <h1 class="text-4xl text-white font-[Roboto] text-center pt-10 lg:pt-50">Toner Levels</h1>
-          <div class="flex justify-center m-5">
-            <BarChart width={1250} height={800} data={toners} margin={{ bottom: 250, top: 20, left: 20, right: 20}}>   
-            <CartesianGrid strokeDasharray="3 3" />
+          <h1 class="text-2xl text-black font-[Roboto] text-center pt-10 lg:pt-50 hidden lg:block">Current Levels</h1>
+          <div class="m-5 justify-center hidden lg:block">
+            <BarChart width={1050} height={800} data={toners} margin={{ bottom: 350, top: 20, left: 20, right: 20}}>   
             <XAxis dataKey="name" interval={0} angle={0} textAnchor="end" tick={<CustomXAxisTick />} />
             <YAxis width={100} allowDecimals={false} />
-            <Tooltip />
-            <Bar dataKey="quantity" fill="gray"/>
+            <Bar dataKey="quantity" fill="black"/>
             </BarChart>
           </div>
 
-          <div>
-            <h1 class="font-[Roboto] text-center m-10 text-4xl bg-[#171717] text-white lg:pt-25">Edit Quantities</h1>
-          </div>
+        {/* This section of code will be for adding a quick summary to the mobile version for a quick glance */}
 
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 bg-[#171717] text-white">
+          {/* <div class="block lg:hidden text-center font-[Roboto]">
+            <h1 class="text-2xl">Quick Summary</h1>
+          </div> */}
+          
+          <div class="bg-[#171717] text-white font-[Roboto]">
+          <h1 class="text-center text-2xl lg:pt-25">Edit Quantities</h1>
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-1">
             {toners.map((toner) => (
               <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl m-5 bg-[#1d1b1b] p-6 shadow-lg outline outline-black/5">
-                <div key={toner.id} class="font-bold font-[Roboto] m-3">
-                <strong>{toner.name}</strong>: {toner.quantity}{' '}
-                  <button class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-12 shadow-lg" onClick={() => handleAdjust(toner, 1)}>+1</button>
-                  <button class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-12 shadow-lg" onClick={() => handleAdjust(toner, -1)}>-1</button>
+                <div key={toner.id} class="font-bold m-3 grid grid-cols-2 size-50">
+                <strong>{toner.name}</strong> {toner.quantity}{' '}
+                  <button class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-15 shadow-lg" onClick={() => handleAdjust(toner, 1)}>+1</button>
+                  <button class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-15 shadow-lg" onClick={() => handleAdjust(toner, -1)}>-1</button>
                 </div>             
               </div>
             ))}
+          </div>
           </div>
         </>
       )}

@@ -1,1 +1,1 @@
-Internal website created to keep track of inventory of our consumable items.
+Internal website created to keep track of our consumable items.
