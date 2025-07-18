@@ -16,7 +16,7 @@ const CustomXAxisTick = (props) => {
       x={x}
       y={y + dy}
       textAnchor="end"
-      fill="black"
+      fill="white"
       fontSize={20}
       fontFamily='Roboto'
       fontWeight={'semibold'}
@@ -80,17 +80,17 @@ function App() {
     
     // Wrapped Bar Chart in a div with hidden block to hide chart on mobile for clean UI  
 
-    <div class="bg-[#726b6b]">
+    <div class="bg-[#171717]">
       {loading ? (
         <p>Loading toner data...</p>
       ) : (
         <>
-          <h1 class="text-2xl text-black font-[Roboto] text-center pt-10 lg:pt-50 hidden lg:block">Current Levels</h1>
+          <h1 class="text-2xl text-white font-[Roboto] text-center pt-10 lg:pt-50 hidden lg:block">Current Levels</h1>
           <div class="m-5 justify-center hidden lg:block">
             <BarChart width={1050} height={800} data={toners} margin={{ bottom: 350, top: 20, left: 20, right: 20}}>   
             <XAxis dataKey="name" interval={0} angle={0} textAnchor="end" tick={<CustomXAxisTick />} />
             <YAxis width={100} allowDecimals={false} />
-            <Bar dataKey="quantity" fill="black"/>
+            <Bar dataKey="quantity" fill="white"/>
             </BarChart>
           </div>
 
