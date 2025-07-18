@@ -4,7 +4,7 @@ function Header() {
         <div class="lg:pt-75 lg:pb-75 pt-30 pb-70 grid grid-cols-2 items-center">
             <h1 class="lg:text-4xl text-2xl font-bold m-4">Purple Crow Consumable Inventory</h1>
                 <img 
-                    src="https://images.squarespace-cdn.com/content/v1/66a0091d17973563ee0e6c22/b70ab23c-00b3-47f5-a3a6-6e7e360b9601/PurpleCrow-2.png" 
+                    src="/Image.png" 
                     alt="Purple crow"
                     class="w-32 h-32 lg:w-44 lg:h-44 rounded-md m-4 justify-self-end"
                 />
