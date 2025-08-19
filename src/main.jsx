@@ -1,14 +1,21 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom';
+import Peripherals from './peripherals';
 import './index.css'
-import App from './App.jsx'
-import Navbar from './navbar.jsx'
-import Header from './header.jsx'
+import Toners from './toners.jsx'
+import Landing from './landing.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
-    <Header />
-    <App />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/peripherals" element={<Peripherals />} />
+      <Route path="/toners" element={<Toners />} />
+    </Routes>
+    </BrowserRouter>
   </StrictMode>,
 )

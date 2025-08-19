@@ -6,6 +6,7 @@ import {
   YAxis,
 } from 'recharts';
 import { supabase } from './supabaseClient';
+import Navbar from './navbar';
 
 
 const CustomXAxisTick = (props) => {
@@ -27,7 +28,7 @@ const CustomXAxisTick = (props) => {
   );
 };
 
-function App() {
+function Toners() {
   const [toners, setToners] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -78,20 +79,25 @@ function App() {
 
   return (
     
+    
     // Wrapped Bar Chart in a div with hidden block to hide chart on mobile for clean UI  
 
     <div class="bg-[#171717]">
+      <Navbar />
       {loading ? (
         <p>Loading toner data...</p>
       ) : (
         <>
+
+        <div class="hidden lg:block">
           <h1 class="text-2xl text-white font-[Roboto] text-center pt-10 lg:pt-50 hidden lg:block">Current Levels</h1>
-          <div class="m-5 justify-center hidden lg:block">
+          <div class="lg:m-5 flex justify-center">
             <BarChart width={1050} height={800} data={toners} margin={{ bottom: 350, top: 20, left: 20, right: 20}}>   
             <XAxis dataKey="name" interval={0} angle={0} textAnchor="end" tick={<CustomXAxisTick />} />
             <YAxis width={100} allowDecimals={false} />
             <Bar dataKey="quantity" fill="white"/>
             </BarChart>
+          </div>
           </div>
 
         {/* This section of code will be for adding a quick summary to the mobile version for a quick glance */}
@@ -100,7 +106,7 @@ function App() {
             <h1 class="text-2xl">Quick Summary</h1>
           </div> */}
           
-          <div class="bg-[#171717] text-white font-[Roboto]">
+          <div class="bg-[#171717] text-white font-[Roboto] mt-25">
           <h1 class="text-center text-2xl lg:pt-25">Edit Quantities</h1>
           <div class="grid grid-cols-1 lg:grid-cols-4 gap-1">
             {toners.map((toner) => (
@@ -120,7 +126,7 @@ function App() {
   );
 }
 
-export default App;
+export default Toners;
 
 
 
