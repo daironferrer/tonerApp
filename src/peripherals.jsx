@@ -102,9 +102,10 @@ function Peripherals() {
 
         {/* This section of code will be for adding a quick summary to the mobile version for a quick glance */}
 
-          {/* <div class="block lg:hidden text-center font-[Roboto]">
+          <div class="block lg:hidden text-center font-[Roboto] mt-40">
             <h1 class="text-2xl">Quick Summary</h1>
-          </div> */}
+            <h1>Low on:</h1>
+          </div> 
           
           <div class="bg-[#171717] text-white font-[Roboto] mt-25">
           <h1 class="text-center text-2xl lg:pt-25">Edit Quantities</h1>
