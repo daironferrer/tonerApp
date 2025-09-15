@@ -143,6 +143,12 @@ function Toners() {
                 >
                   UBEO Printer
                 </a>
+                <a
+                  href="https://www.amazon.com/dp/B00HV43884?ref=fed_asin_title&th=1"
+                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors sm:col-span-2 lg:col-span-1"
+                >
+                  PrintBoss
+                </a>
               </div>
             </div>
           </div>
