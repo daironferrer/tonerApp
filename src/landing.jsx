@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import pic from "/src/images/PurpleCrow-logo.webp"
 
 function Landing() {
     return(
         <div>
             <div class="grid grid-cols-1 place-items-center mt-15">
-                <img src="/src/images/PurpleCrow-logo.webp" class="size-50"></img>
+                <img src={ pic } class="size-50"></img>
             </div>
             <div class="bg-[#171717] text-white font-[Roboto] lg:pt-10 pt-15">
             <div class="grid grid-cols-1 place-items-center">
