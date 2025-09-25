@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import pic from "/src/images/PurpleCrow-logo.webp"
+import pic from "/src/images/LogoAndText.jpg"
 
 function Landing() {
     return(
