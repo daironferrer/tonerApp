@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect} from "react";
 import { BarChart, Bar, XAxis, YAxis } from "recharts";
 import { supabase } from "./supabaseClient";
 import Navbar from "./navbar";
