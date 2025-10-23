@@ -6,7 +6,7 @@ function Landing() {
             <div className="flex flex-col items-center">
               <div>
               <img
-                src="/src/images/PurpleCrow-logo.webp"
+                src="/public/PurpleCrow-logo.webp"
                 className="lg:size-80 size-40 rounded-full m-5"
               />
               </div>
