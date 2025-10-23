@@ -72,7 +72,7 @@ function Peripherals() {
   return (
     // Wrapped Bar Chart in a div with hidden block to hide chart on mobile for clean UI
 
-    <div class="bg-[#171717]">
+    <div>
       <Navbar />
       {loading ? (
         <p>Loading toner data...</p>
@@ -109,24 +109,25 @@ function Peripherals() {
             <h1>Low on:</h1>
           </div>
 
-          <div class="bg-[#171717] text-white font-[Roboto] mt-25">
-            <h1 class="text-center text-2xl lg:pt-25">Edit Quantities</h1>
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-1">
+          <div class="text-white font-[Roboto] mt-25">
+            <h1 class="text-center text-2xl lg:pt-25 mb-6">Edit Quantities</h1>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-3 px-4">
               {peripherals.map((peripheral) => (
-                <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl m-5 bg-[#1d1b1b] p-6 shadow-lg outline outline-black/5">
-                  <div
-                    key={peripheral.id}
-                    class="font-bold m-3 grid grid-cols-2 size-50"
-                  >
-                    <strong>{peripheral.name}</strong> {peripheral.quantity}{" "}
+                <div 
+                  key={peripheral.id}
+                  class="rounded-lg p-6 bg-neutral-800/30 backdrop-blur-lg"
+                >
+                  <div class="text-sm font-bold mb-1">{peripheral.name}</div>
+                  <div class="text-xs text-gray-400 mb-3">Qty: {peripheral.quantity}</div>
+                  <div class="flex gap-2">
                     <button
-                      class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-15 shadow-lg"
+                      class="flex-1  bg-neutral-800/30 backdrop-blur-lg text-white hover:bg-blue-900 rounded-md py-5 text-sm shadow-lg transition-colors"
                       onClick={() => handleAdjust(peripheral, 1)}
                     >
                       +1
                     </button>
                     <button
-                      class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-15 shadow-lg"
+                      class="flex-1  bg-neutral-800/30 backdrop-blur-lg text-white hover:bg-blue-900 rounded-md py-5 text-sm shadow-lg transition-colors"
                       onClick={() => handleAdjust(peripheral, -1)}
                     >
                       -1

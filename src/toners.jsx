@@ -72,7 +72,7 @@ function Toners() {
   return (
     // Wrapped Bar Chart in a div with hidden block to hide chart on mobile for clean UI
 
-    <div class="bg-[#171717]">
+    <div>
       <Navbar />
       {loading ? (
         <p>Loading toner data...</p>
@@ -111,41 +111,41 @@ function Toners() {
 
           <div class="hidden lg:block">
             <h1 class="text-center text-2xl mb-4">Reorder</h1>
-            <div class="mx-auto max-w-4xl rounded-xl m-5 bg-[#1d1b1b] p-6 shadow-lg outline outline-black/5">
+            <div class="mx-auto max-w-4xl rounded-xl m-5 p-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a
                   href="https://www.amazon.com/dp/B0DDKKSJ1M?ref=fed_asin_title"
-                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors"
+                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   760 Toner
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B09W9K6BPM?ref=fed_asin_title"
-                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors"
+                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   730 Drum
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B0D8Q5HQBX?ref=fed_asin_title"
-                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors"
+                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   830XL Toner
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B0D8Q61J3Y?ref=fed_asin_title&th=1"
-                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors"
+                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   830 Drum
                 </a>
                 <a
                   href="https://ueweb1.ubeo.com/einfo/Gateway/Login?ReturnUrl=%2feinfo%2f"
-                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors sm:col-span-2 lg:col-span-1"
+                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   UBEO Printer
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B00HV43884?ref=fed_asin_title&th=1"
-                  class="bg-[#171717] text-white hover:bg-purple-900 rounded-md p-4 shadow-lg text-center block transition-colors sm:col-span-2 lg:col-span-1"
+                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   PrintBoss
                 </a>
@@ -153,24 +153,25 @@ function Toners() {
             </div>
           </div>
 
-          <div class="bg-[#171717] text-white font-[Roboto] mt-25">
-            <h1 class="text-center text-2xl lg:pt-25">Edit Quantities</h1>
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-1">
+          <div class="text-white font-[Roboto] mt-25">
+            <h1 class="text-center text-2xl lg:pt-25 mb-6">Edit Quantities</h1>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-3 px-4">
               {toners.map((toner) => (
-                <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl m-5 bg-[#1d1b1b] p-6 shadow-lg outline outline-black/5">
-                  <div
-                    key={toner.id}
-                    class="font-bold m-3 grid grid-cols-2 size-50"
-                  >
-                    <strong>{toner.name}</strong> {toner.quantity}{" "}
+                <div 
+                  key={toner.id}
+                  class="rounded-lg p-6 bg-neutral-800/30 backdrop-blur-lg"
+                >
+                  <div class="text-sm font-bold mb-1">{toner.name}</div>
+                  <div class="text-xs text-gray-400 mb-3">Qty: {toner.quantity}</div>
+                  <div class="flex gap-2">
                     <button
-                      class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-15 shadow-lg"
+                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg text-white hover:bg-blue-900 rounded-md py-4 text-sm shadow-lg transition-colors"
                       onClick={() => handleAdjust(toner, 1)}
                     >
                       +1
                     </button>
                     <button
-                      class="bg-[#171717] text-white hover:bg-purple-900 rounded-md m-1 size-15 shadow-lg"
+                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg text-white hover:bg-blue-900 rounded-md py-2 text-sm shadow-lg transition-colors"
                       onClick={() => handleAdjust(toner, -1)}
                     >
                       -1
