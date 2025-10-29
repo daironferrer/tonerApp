@@ -2,31 +2,48 @@ import { Link } from "react-router-dom";
 
 function Landing() {
     return(
-        <div class="bg-linear-65 from-black to-gray-800 min-h-screen">
-            <div className="flex flex-col items-center">
-              <div>
-              <img
-                src="/public/PurpleCrow-logo.webp"
-                className="lg:size-80 size-40 rounded-full m-5"
-              />
+        <div>
+            <div class="flex justify-center mt-50">
+              <div class="lg:w-1/2 text-center lg:text-2xl">
+              <h2 class="text-5xl lg:text-8xl font-bold mb-4">Purple Crow IT Inventory</h2>
               </div>
+            </div>
 
-              <div className="lg:w-1/2 text-center lg:text-2xl">
-              <h2 className="text-2xl font-bold mb-4">Purple Crow IT Inventory</h2>
-              </div>
-              </div>
             <div class="text-white font-[Roboto] pt-5">
             <div class="grid grid-cols-1 place-items-center">
-                <h1></h1>
-                <h1>What consumable would you like to track today?</h1>
+                <h1 class="lg:text-xl">What consumable would you like to track today?</h1>
             </div>
-            <div class="flex justify-center m-5">
-                <Link to='/toners' 
-                    class="flex justify-center items-center h-20 w-50 m-5 text-sm text-white bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-2xl border border-white/30 shadow-xl hover:shadow-white/10 hover:border-white/40 transition-all duration-300">Toner</Link>
-                <Link to='/peripherals' 
-                    class="flex justify-center items-center h-20 w-50 m-5 text-sm text-white bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-2xl border border-white/30 shadow-xl hover:shadow-white/10 hover:border-white/40 transition-all duration-300">Peripherals</Link>
+            <div class="flex flex-col items-center m-20">
+                <Link
+                to="/toners"
+                class="flex flex-col items-center justify-center m-2
+                h-28 w-11/12 sm:h-36 sm:w-64 md:h-44 md:w-100 lg:h-52 lg:w-150
+                text-base sm:text-lg md:text-xl
+                text-white text-center
+                bg-gradient-to-br from-white/13 to-white/5 backdrop-blur-xl
+                rounded-2xl border border-white/10 shadow-xl
+                hover:shadow-white/5 hover:border-white/40
+                transition-all duration-300 cursor-pointer"
+                >
+                <h1 class="font-semibold lg:text-2xl m-2">Printer Toner</h1>
+                <p class="text-sm sm:text-base">Manage all printer toner cartridges</p>
+                </Link>
+
+                <Link 
+                to="/peripherals"
+                class="flex flex-col items-center justify-center m-2
+                h-28 w-11/12 sm:h-36 sm:w-64 md:h-44 md:w-100 lg:h-52 lg:w-150
+                text-base sm:text-lg md:text-xl
+                text-white text-center
+                bg-gradient-to-br from-white/13 to-white/5 backdrop-blur-xl
+                rounded-2xl border border-white/10 shadow-xl
+                hover:shadow-white/5 hover:border-white/40
+                transition-all duration-300 cursor-pointer">
+                <h1 class="font-semibold lg:text-2xl m-2">Peripherals</h1>
+                <p class="text-sm">Track keyboards, mice and office accessories</p>
+                </Link>
             </div>
-        </div>
+            </div>
         </div>
     )
 }
