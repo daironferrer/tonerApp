@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import { AuroraBackground } from "./aurora";
 
 function Landing() {
     return(
+        < AuroraBackground >
         <div>
+            <div class="flex items-center m-5 md:m-5 lg:m-10 h-24">
+                <h1 class="text-white">Purple Crow</h1>
+                <img src="/PurpleCrow-logo.webp" class="size-15 object-contain"/>
+            </div>
             <div class="flex justify-center mt-50">
               <div class="lg:w-1/2 text-center lg:text-2xl">
-              <h2 class="text-5xl lg:text-8xl font-bold mb-4">Purple Crow IT Inventory</h2>
+              <h2 class="text-5xl lg:text-8xl font-bold mb-4 text-white">IT Inventory</h2>
               </div>
             </div>
 
@@ -20,7 +26,7 @@ function Landing() {
                 h-28 w-11/12 sm:h-36 sm:w-64 md:h-44 md:w-100 lg:h-52 lg:w-150
                 text-base sm:text-lg md:text-xl
                 text-white text-center
-                bg-gradient-to-br from-white/13 to-white/5 backdrop-blur-xl
+                 bg-neutral-800/30 backdrop-blur-lg
                 rounded-2xl border border-white/10 shadow-xl
                 hover:shadow-white/5 hover:border-white/40
                 transition-all duration-300 cursor-pointer"
@@ -35,7 +41,7 @@ function Landing() {
                 h-28 w-11/12 sm:h-36 sm:w-64 md:h-44 md:w-100 lg:h-52 lg:w-150
                 text-base sm:text-lg md:text-xl
                 text-white text-center
-                bg-gradient-to-br from-white/13 to-white/5 backdrop-blur-xl
+                 bg-neutral-800/30 backdrop-blur-lg
                 rounded-2xl border border-white/10 shadow-xl
                 hover:shadow-white/5 hover:border-white/40
                 transition-all duration-300 cursor-pointer">
@@ -45,6 +51,7 @@ function Landing() {
             </div>
             </div>
         </div>
+        </AuroraBackground>
     )
 }
 
