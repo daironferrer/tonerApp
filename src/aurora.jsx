@@ -11,7 +11,7 @@ export const AuroraBackground = ({
   return (
     <div
       className={cn(
-        "transition-bg relative flex min-h-screen flex-col items-center justify-center bg-black text-white", // darker base
+        "transition-bg relative flex min-h-screen flex-col items-center justify-center bg-black text-white",
         className
       )}
       {...props}
@@ -19,14 +19,12 @@ export const AuroraBackground = ({
       <div
         className="absolute inset-0 overflow-hidden"
         style={{
-          // --- BLACK + PURPLE PALETTE ---
           "--aurora":
             "repeating-linear-gradient(100deg,#4c1d95_10%,#6d28d9_20%,#7e22ce_30%,#8b5cf6_40%,#a78bfa_50%)",
           "--dark-gradient":
             "repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%)",
           "--white-gradient":
             "repeating-linear-gradient(100deg,#1a1a1a_0%,#1a1a1a_7%,transparent_10%,transparent_12%,#1a1a1a_16%)",
-          // optional named vars if you want to reuse them
           "--purple-900": "#4c1d95",
           "--purple-700": "#6d28d9",
           "--purple-600": "#7e22ce",
@@ -50,7 +48,7 @@ export const AuroraBackground = ({
              after:[background-image:var(--dark-gradient),var(--aurora)]
              after:[background-size:200%,_100%]
              after:[background-attachment:fixed]
-             after:mix-blend-screen after:content-[""]`, // nicer glow on black
+             after:mix-blend-screen after:content-[""]`,
             showRadialGradient &&
               `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`
           )}
