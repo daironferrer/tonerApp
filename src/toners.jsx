@@ -115,37 +115,43 @@ function Toners() {
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a
                   href="https://www.amazon.com/dp/B0DDKKSJ1M?ref=fed_asin_title"
-                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                  class="flex items-center gap-6 text-sm py-5 px-6
+                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   760 Toner
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B09W9K6BPM?ref=fed_asin_title"
-                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                  class="flex items-center gap-6 text-sm py-5 px-6
+                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   730 Drum
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B0D8Q5HQBX?ref=fed_asin_title"
-                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                  class="flex items-center gap-6 text-sm py-5 px-6
+                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   830XL Toner
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B0D8Q61J3Y?ref=fed_asin_title&th=1"
-                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                  class="flex items-center gap-6 text-sm py-5 px-6
+                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   830 Drum
                 </a>
                 <a
                   href="https://ueweb1.ubeo.com/einfo/Gateway/Login?ReturnUrl=%2feinfo%2f"
-                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                  class="flex items-center gap-6 text-sm py-5 px-6
+                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   UBEO Printer
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B00HV43884?ref=fed_asin_title&th=1"
-                  class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                  class="flex items-center gap-6 text-sm py-5 px-6
+                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
                 >
                   PrintBoss
                 </a>
@@ -165,13 +171,15 @@ function Toners() {
                   <div class="text-xs text-gray-400 mb-3">Qty: {toner.quantity}</div>
                   <div class="flex gap-2">
                     <button
-                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg text-white hover:bg-blue-900 rounded-md py-4 text-sm shadow-lg transition-colors"
+                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg
+                       text-white hover:bg-blue-900 rounded-md py-4 text-sm shadow-lg transition-colors"
                       onClick={() => handleAdjust(toner, 1)}
                     >
                       +1
                     </button>
                     <button
-                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg text-white hover:bg-blue-900 rounded-md py-2 text-sm shadow-lg transition-colors"
+                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg
+                       text-white hover:bg-blue-900 rounded-md py-2 text-sm shadow-lg transition-colors"
                       onClick={() => handleAdjust(toner, -1)}
                     >
                       -1

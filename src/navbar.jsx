@@ -4,7 +4,7 @@ function Navbar() {
     return(
 <div class="relative bg-black">
         <nav class="fixed top-0 left-0 right-0 z-10 w-full flex justify-center items-center h-24 text-white font-[Roboto]">
-            <ul class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-neutral-800/30 backdrop-blur-lg rounded-md">
+            <ul class="flex items-center gap-6 text-sm py-5 px-6 text-white bg-white/10 inset-0 rounded-[7px] backdrop-blur-[3px] shadow-lg">
                 <li><Link to="/" class="hover:text-purple-400 transition-colors">Home</Link></li>
                 <li><Link to="/toners" class="hover:text-purple-400 transition-colors">Toner</Link></li>
                 <li><Link to="/peripherals" class="hover:text-purple-400 transition-colors">Peripherals</Link></li>
