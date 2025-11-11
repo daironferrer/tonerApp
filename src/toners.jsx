@@ -116,42 +116,78 @@ function Toners() {
                 <a
                   href="https://www.amazon.com/dp/B0DDKKSJ1M?ref=fed_asin_title"
                   class="flex items-center gap-6 text-sm py-5 px-6
-                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                   bg-black/20 
+                    backdrop-blur-sm border border-white/50 rounded-2xl 
+                    shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                    p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                  before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                    after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                    after:to-transparent after:opacity-50 after:pointer-events-none  hover:bg-blue-900"
                 >
                   760 Toner
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B09W9K6BPM?ref=fed_asin_title"
                   class="flex items-center gap-6 text-sm py-5 px-6
-                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                   bg-black/20 
+                    backdrop-blur-sm border border-white/50 rounded-2xl 
+                    shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                    p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                  before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                    after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                    after:to-transparent after:opacity-50 after:pointer-events-none  hover:bg-blue-900"
                 >
                   730 Drum
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B0D8Q5HQBX?ref=fed_asin_title"
                   class="flex items-center gap-6 text-sm py-5 px-6
-                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                   bg-black/20 
+                    backdrop-blur-sm border border-white/50 rounded-2xl 
+                    shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                    p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                  before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                    after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                    after:to-transparent after:opacity-50 after:pointer-events-none  hover:bg-blue-900"
                 >
                   830XL Toner
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B0D8Q61J3Y?ref=fed_asin_title&th=1"
                   class="flex items-center gap-6 text-sm py-5 px-6
-                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                   bg-black/20 
+                    backdrop-blur-sm border border-white/50 rounded-2xl 
+                    shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                    p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                  before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                    after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                    after:to-transparent after:opacity-50 after:pointer-events-none  hover:bg-blue-900"
                 >
                   830 Drum
                 </a>
                 <a
                   href="https://ueweb1.ubeo.com/einfo/Gateway/Login?ReturnUrl=%2feinfo%2f"
                   class="flex items-center gap-6 text-sm py-5 px-6
-                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                   bg-black/20 
+                    backdrop-blur-sm border border-white/50 rounded-2xl 
+                    shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                    p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                  before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                    after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                    after:to-transparent after:opacity-50 after:pointer-events-none  hover:bg-blue-900"
                 >
                   UBEO Printer
                 </a>
                 <a
                   href="https://www.amazon.com/dp/B00HV43884?ref=fed_asin_title&th=1"
                   class="flex items-center gap-6 text-sm py-5 px-6
-                   text-white bg-neutral-800/30 backdrop-blur-lg rounded-md"
+                   bg-black/20 
+                    backdrop-blur-sm border border-white/50 rounded-2xl 
+                    shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                    p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                  before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                    after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                    after:to-transparent after:opacity-50 after:pointer-events-none  hover:bg-blue-900"
                 >
                   PrintBoss
                 </a>
@@ -165,21 +201,39 @@ function Toners() {
               {toners.map((toner) => (
                 <div 
                   key={toner.id}
-                  class="rounded-lg p-6 bg-neutral-800/30 backdrop-blur-lg"
+                  class=" bg-black/20 
+              backdrop-blur-sm border border-white/50 rounded-2xl 
+              shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+              p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+             before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+              after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+              after:to-transparent after:opacity-50 after:pointer-events-none"
                 >
                   <div class="text-sm font-bold mb-1">{toner.name}</div>
                   <div class="text-xs text-gray-400 mb-3">Qty: {toner.quantity}</div>
                   <div class="flex gap-2">
                     <button
-                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg
-                       text-white hover:bg-blue-900 rounded-md py-4 text-sm shadow-lg transition-colors"
+                      class="flex-1  bg-black/20 
+                            backdrop-blur-sm border border-white/50 rounded-2xl 
+                            shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                            p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                          before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                            after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                            after:to-transparent after:opacity-50 after:pointer-events-none
+                          hover:bg-blue-900 py-4 text-sm transition-colors"
                       onClick={() => handleAdjust(toner, 1)}
                     >
                       +1
                     </button>
                     <button
-                      class="flex-1 bg-neutral-800/30 backdrop-blur-lg
-                       text-white hover:bg-blue-900 rounded-md py-2 text-sm shadow-lg transition-colors"
+                      class="flex-1  bg-black/20 
+                            backdrop-blur-sm border border-white/50 rounded-2xl 
+                            shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] 
+                            p-6 text-white relative before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br
+                          before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
+                            after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
+                            after:to-transparent after:opacity-50 after:pointer-events-none
+                         hover:bg-blue-900 py-2 text-sm transition-colors"
                       onClick={() => handleAdjust(toner, -1)}
                     >
                       -1
