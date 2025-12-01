@@ -27,11 +27,7 @@
 body {
   margin: 0;
   color: white;
-  background: linear-gradient(to bottom right,
-      #000000 0%,
-      #08020e 60%,
-      #0e021d 80%,
-       #130529 100%);
+  background: black;
   background-attachment: fixed;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
