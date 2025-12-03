@@ -1,21 +1,36 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { Routes, Route} from 'react-router-dom';
-import Peripherals from './peripherals';
-import './index.css'
-import Toners from './toners.jsx'
-import Landing from './landing.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
+import Peripherals from "./peripherals";
+import Toners from "./toners.jsx";
+import Landing from "./landing.jsx";
+import "./index.css";
 
-createRoot(document.getElementById('root')).render(
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Landing />} />
+        <Route path="/peripherals" element={<Peripherals />} />
+        <Route path="/toners" element={<Toners />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/peripherals" element={<Peripherals />} />
-      <Route path="/toners" element={<Toners />} />
-    </Routes>
+      <AnimatedRoutes />
     </BrowserRouter>
-  </StrictMode>,
-)
+  </StrictMode>
+);

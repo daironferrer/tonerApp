@@ -14,13 +14,14 @@
     "@tailwindcss/vite": "^4.1.11",
     "clsx": "^2.1.1",
     "david-ai": "^1.0.6",
+    "framer-motion": "^12.23.25",
     "lucide-react": "^0.555.0",
-    "motion": "^12.23.24",
+    "motion": "^12.23.25",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
     "recharts": "^2.15.3",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

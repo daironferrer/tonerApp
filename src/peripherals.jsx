@@ -2,6 +2,19 @@ import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { supabase } from "./supabaseClient";
 import Navbar from "./navbar";
+import { AuroraBackground } from "./aurora";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: { opacity: 0, scale: 0.95 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.95 }
+};
+
+const pageTransition = {
+  duration: 1.2,
+  ease: "easeInOut",
+};
 
 function Peripherals() {
   const [peripherals, setPeripherals] = useState([]);
@@ -55,14 +68,23 @@ function Peripherals() {
   };
 
   return (
-    <div>
+    <motion.div
+          className="min-h-screen flex flex-col"
+          variants={pageVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={pageTransition}
+        >
+    <AuroraBackground>
+    <div className="relative z-10 mt-40 lg:mt-15">
       <Navbar />
       {loading ? (
-        <p className="text-white text-center pt-10">Loading peripheral data...</p>
+        <p className="text-white text-center">Loading peripheral data...</p>
       ) : (
         <>
-          <div className="text-white font-[Roboto] mt-30 lg:mt-50">
-            <h1 className="text-center text-3xl lg:text-4xl mb-8 font-semibold">
+          <div className="text-white font-[Roboto] mt-24 lg:mt-52">
+            <h1 className="text-center text-3xl lg:text-4xl mb-5 font-semibold">
               Inventory Management
             </h1>
 
@@ -73,7 +95,6 @@ function Peripherals() {
                     key={peripheral.id}
                     className="bg-black/20 backdrop-blur-sm border border-white/50 rounded-2xl shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] overflow-hidden"
                   >
-                    {/* Accordion Header */}
                     <button
                       onClick={() => toggleExpanded(peripheral.id)}
                       className="w-full flex items-center justify-between p-6 hover:bg-blue-900/30 transition-colors
@@ -95,7 +116,6 @@ function Peripherals() {
                       />
                     </button>
 
-                    {/* Accordion Content */}
                     {expandedId === peripheral.id && (
                       <div className="border-t border-white/20 p-6 bg-black/10">
                         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
@@ -140,6 +160,8 @@ function Peripherals() {
         </>
       )}
     </div>
+    </AuroraBackground>
+    </motion.div>
   );
 }
 

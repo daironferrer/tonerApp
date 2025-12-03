@@ -11,7 +11,7 @@ export const AuroraBackground = ({
   return (
     <div
       className={cn(
-        "transition-bg relative flex min-h-screen flex-col items-center justify-center bg-black text-white",
+        "transition-bg relative min-h-screen bg-black text-white",
         className
       )}
       {...props}
@@ -20,16 +20,16 @@ export const AuroraBackground = ({
         className="absolute inset-0 overflow-hidden"
         style={{
           "--aurora":
-            "repeating-linear-gradient(100deg,#4c1d95_10%,#6d28d9_20%,#7e22ce_30%,#8b5cf6_40%,#a78bfa_50%)",
+            "repeating-linear-gradient(100deg,#1a3a52_10%,#2c5aa0_20%,#3d7ec8_30%,#5a9fd4_40%,#7bb3e0_50%)",
           "--dark-gradient":
             "repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%)",
           "--white-gradient":
             "repeating-linear-gradient(100deg,#1a1a1a_0%,#1a1a1a_7%,transparent_10%,transparent_12%,#1a1a1a_16%)",
-          "--purple-900": "#4c1d95",
-          "--purple-700": "#6d28d9",
-          "--purple-600": "#7e22ce",
-          "--purple-500": "#8b5cf6",
-          "--purple-400": "#a78bfa",
+          "--blue-900": "#1a3a52",
+          "--blue-700": "#2c5aa0",
+          "--blue-600": "#3d7ec8",
+          "--blue-500": "#5a9fd4",
+          "--blue-400": "#7bb3e0",
           "--black": "#000",
           "--transparent": "transparent",
         }}
@@ -41,8 +41,8 @@ export const AuroraBackground = ({
              [background-size:300%,_200%]
              [background-position:50%_50%,50%_50%]
              opacity-60 blur-[16px] filter will-change-transform
-             /* lock in purple scheme for the inner layer as well */
-             [--aurora:repeating-linear-gradient(100deg,#4c1d95_10%,#6d28d9_20%,#7e22ce_30%,#8b5cf6_40%,#a78bfa_50%)]
+             /* lock in grayish blue scheme for the inner layer as well */
+             [--aurora:repeating-linear-gradient(100deg,#1a3a52_10%,#2c5aa0_20%,#3d7ec8_30%,#5a9fd4_40%,#7bb3e0_50%)]
              [--dark-gradient:repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%)]
              after:absolute after:inset-0
              after:[background-image:var(--dark-gradient),var(--aurora)]

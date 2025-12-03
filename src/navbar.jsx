@@ -11,10 +11,10 @@ function Navbar() {
              before:from-white/30 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none 
               after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/15 after:via-transparent 
               after:to-transparent after:opacity-50 after:pointer-events-none">
-                <li><Link to="/" class="hover:text-purple-400 transition-colors">Home</Link></li>
-                <li><Link to="/toners" class="hover:text-purple-400 transition-colors">Toner</Link></li>
-                <li><Link to="/peripherals" class="hover:text-purple-400 transition-colors">Peripherals</Link></li>
-                <li><a href="https://purplecrow.freshservice.com/cmdb/items" class="hover:text-purple-400 transition-colors">Fresh Service</a></li>
+                <li><Link to="/" class="hover:text-blue-500/30 transition-colors">Home</Link></li>
+                <li><Link to="/toners" class="hover:text-blue-500/30 transition-colors">Toner</Link></li>
+                <li><Link to="/peripherals" class="hover:text-blue-500/30 transition-colors">Peripherals</Link></li>
+                <li><a href="https://purplecrow.freshservice.com/cmdb/items" class="hover:text-blue-500/30 transition-colors">Fresh Service</a></li>
             </ul>
         </nav>
     </div> 
