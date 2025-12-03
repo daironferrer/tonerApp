@@ -12,7 +12,7 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  duration: 1.2,
+  duration: 0.5,
   ease: "easeInOut",
 };
 
