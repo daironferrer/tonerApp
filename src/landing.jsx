@@ -1,4 +1,3 @@
-// Landing.jsx
 import { Link } from "react-router-dom";
 import { Spotlight } from "./spotlight.jsx";
 import { initDavidAI } from "david-ai";
